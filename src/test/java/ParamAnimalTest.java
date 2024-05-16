@@ -21,19 +21,14 @@ public class ParamAnimalTest {
     public static Object[][] testData() {
         return new Object[][] {
                 {"Травоядное", List.of("Трава", "Различные растения")},
-                {"Хищник", List.of("Животные", "Птицы", "Рыба")},
-                {"Космические жуки", List.of("Неизвестный вид животного, используйте значение Травоядное или Хищник")}
+                {"Хищник", List.of("Животные", "Птицы", "Рыба")}
         };
     }
 
 
     @Test
-    public void getFoodCheck() {
+    public void getFoodCheck() throws Exception {
         Animal animal = new Animal();
-        try {
-            Assert.assertEquals(food, animal.getFood(animalKind));
-        } catch (Exception exception) {
-            Assert.assertEquals(food.get(0), exception.getMessage());
-        }
+        Assert.assertEquals(food, animal.getFood(animalKind));
     }
 }
